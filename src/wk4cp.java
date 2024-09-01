@@ -3,11 +3,19 @@ import java.lang.reflect.Array;
 public class wk4cp {
 
 	public static void main(String[] args) {
+		
+//		 Create an array of int called ages that contains the following values: 3, 9, 23, 64, 2, 8, 28, 93.
+//		 a. Programmatically subtract the value of the first element in the array from the value in the last element of the array (i.e. do not use ages[7] in your code). Print the result to the console.  
+//		 b. Create a new array of int called ages2 with 9 elements (ages2 will be longer than the ages array, and have more elements).  
+//		 i. Make sure that there are 9 elements of type int in this new array.  
+//		 ii. Repeat the subtraction from Step 1.a. (Programmatically subtract the value of the first element in the new array ages2 from the last element of ages2). 
+//		 iii. Show that using the index values for the elements is dynamic (works for arrays of different lengths).
+//		 c. Use a loop to iterate through the array and calculate the average age. Print the result to the console.
 	//1. array of numbers - numbers
 		int[] ages = {3, 9, 23, 64, 2, 8, 28, 93}; //created the list
 		int resultMinus1 = ages[ages.length -1] - ages[0]; //this created a value that that took the last element and subtracted the first element
 		System.out.println(resultMinus1); //sysout
-		System.out.println("--------1. continued------");
+		System.out.println("--------1.b------");
 		int[] ages2 = new int[9];
 		ages2[0] = 2;
 		ages2[1] = 4;
@@ -18,18 +26,23 @@ public class wk4cp {
 		ages2[6] = 20;
 		ages2[7] = 50;
 		ages2[8] = 75;
-							//last element 75 // first element
+		//1.b			subtraction		//last element 75 // first element
 		int result = ages2[ages2.length - 1] - ages2[0]; // 75 - 2 = 3
 		System.out.println(result);
-	//2. aveage age
-		System.out.println("-------- 2. ----------");
+	// 1. part 2 calculating the average age 
+		System.out.println("-------- 1.c ----------");
 		int sum = 0;
 		for (int i = 0; i < ages.length; i ++) {
 			sum += ages[i];
 		}
 		double averageAge = (double) sum / ages.length;
 		System.out.println("Average age: " + averageAge);
-		System.out.println("--------3. -----");
+//	2. Create an array of String called names that contains the following values: “Sam”, “Tommy”, “Tim”, “Sally”, “Buck”, “Bob”.
+//	a. Use a loop to iterate through the array and calculate the average number of letters per name. Print the result to the console.
+//	b. Use a loop to iterate through the array again and concatenate all the names together, separated by spaces, and print the result to the console.
+//		
+	
+		System.out.println("--------2.a -----");
 		String[] names = {"Sam", "Tommy", "Tim", "Sally", "Buck", "Bob"};
 		int totalLength = 0;
 		
@@ -38,7 +51,7 @@ public class wk4cp {
 		}
 		double averageLetterLength = (double) totalLength / names.length;
 		System.out.println("Average numbers of letters: " + averageLetterLength);
-		System.out.println("---------------");
+		System.out.println("-------2.b--------");
 		StringBuilder combiningNames = new StringBuilder();
 		for (String name : names) {
 			if (combiningNames.length() > 0) {
@@ -56,7 +69,8 @@ public class wk4cp {
 		System.out.println("--------4-------");
 		//int firstE = array[0];
 		
-	//5. creating nameLengths array
+	//5. creating nameLengths array 
+		//Write a loop to iterate over the previously created names array and add the length of each name to the nameLengths array.
 		int[] nameLengths = new int[names.length]; //instantiating here
 		int lengthSum = 0; //adding index counter, probably don't need this, but for the enhanced for loop why not?
 		
@@ -65,15 +79,18 @@ public class wk4cp {
 		} 
 		
 	//6. Sum of nameLengths
+		// calculate the sum of all the elements in the array. Print the result to the console.
 		for (int length : nameLengths) {
 			lengthSum += length;
 		}
 		System.out.println("Sum of all elements in array: " + lengthSum);
 		System.out.println("-----------7------------");
-		System.out.println(multiplyWord("Hello", 3)); //pulling from the method multiplyWord
+	//7. Write a method that takes a String, word, and an int, n, as arguments and returns the word concatenated to itself n number of times. 
+		System.out.println(multiplyWord("Hello", 4)); //pulling from the method multiplyWord
 		System.out.println("-----------8----------");
 		
 	//8. not sure, but it works calling the method and combining the names
+	//Write a method that takes two Strings, firstName and lastName, and returns a full name (the full name should be the first and the last name as a String separated by a space).
 		String entireName = fullName("Jimmy", "TwoShoes");
 		System.out.println(entireName);
 		
@@ -97,7 +114,7 @@ public class wk4cp {
 	//12. buying a drink
 		System.out.println(willBuyDrink(true, 12));//this is letting us know that it is hotoutside and we have more than 10.50 so we are buying a drink.
 		
-	//13. 
+	//13. my own problem with a boolean method
 		int curve = 100;
 		boolean isHard = javaIsHard(curve);
 		System.out.println("Java is hard: " + isHard);
